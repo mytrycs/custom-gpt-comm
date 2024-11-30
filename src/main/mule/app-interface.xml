@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b46387df-64a1-4412-821e-b23c862c3bd0" >
+		<http:listener-connection host="0.0.0.0" port="8071" />
+	</http:listener-config>
+	<flow name="app-interfaceFlow" doc:id="d04d743f-edbc-46c8-b026-542610ffca8d" >
+		<http:listener doc:name="Listener" doc:id="8b41a4cc-6078-4184-8965-f2bd80e7bf32" config-ref="HTTP_Listener_config" path="api/v1/*" />
+		<logger level="INFO" doc:name="start" doc:id="775c4f22-acea-4ecb-9433-92bc7ddf3667" message="START" />
+		<set-payload value='#[output json &#10;---&#10;{&#10;	"status": "UP",&#10;	"name": "Custom GPT community edition",&#10;	"status": "UP",&#10;	"details": {&#10;		"lastChecked": now()&#10;	}&#10;}]' doc:name="health" doc:id="3fb43f2d-264e-4738-b256-089dcb271e68" />
+		<logger level="INFO" doc:name="end" doc:id="f07823d4-6884-45b9-a53c-fdd330d69b59" message="END" />
+	</flow>
+</mule>
