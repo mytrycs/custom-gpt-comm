@@ -11,4 +11,5 @@ COPY ${LOCAL_DEPLOY_PATH}/ /opt/mule/apps/
 EXPOSE 8081 7777
 
 # Run Mule runtime in the container
+
 CMD ["bin/mule"]
