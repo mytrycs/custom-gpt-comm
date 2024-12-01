@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven '3.5.4'
+    }
+
     environment {
         DOCKER_IMAGE = "mule-api"
         DOCKER_CONTAINER_NAME = "mule-runtime"
