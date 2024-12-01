@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "mule-api"
         DOCKER_CONTAINER_NAME = "mule-runtime"
-        MULE_DOCKER_IMAGE = "custom/mule-runtime:4.5.0" // Replace with your Mule runtime Docker image
+        MULE_DOCKER_IMAGE = "mule-runtime:4.5.0" // Replace with your Mule runtime Docker image
         LOCAL_DEPLOY_PATH = "/opt/mule/apps" // Default Mule apps deployment path
     }
 
