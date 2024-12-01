@@ -28,6 +28,7 @@ pipeline {
                 echo "Building a Docker image for the Mule API..."
                 script {
                     sh """
+                        docker --version
                         docker build -t ${DOCKER_IMAGE} .
                     """
                 }
