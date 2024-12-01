@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building the Mule application..."
-                sh './mvnw clean package -DskipTests' // Use Maven Wrapper or mvn if installed globally
+                sh 'mvn clean package -DskipTests' // Use Maven Wrapper or mvn if installed globally
             }
         }
 
